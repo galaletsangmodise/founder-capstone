@@ -1,9 +1,5 @@
 # AI Usage Log
 
-You are expected to use AI well and prove it. At least 3 substantial entries.
-At least one must be a time AI was confidently wrong and you caught it.
-
-
 ## AI moment 1
 
 - What I was trying to do: Get a working item detail screen quickly, matching my existing project's patterns (no router, plain CSS, local screen-switching in `App.tsx`).
@@ -26,6 +22,6 @@ At least one must be a time AI was confidently wrong and you caught it.
 - The prompt I wrote: Said I wanted to fix this by sourcing better-matching photos so the app "looks really professional," 
 - What the AI gave back: It started pulling actual image search results to find real matching photos rather than just asserting URLs from memory.
 - What was wrong / weak / risky about it: This was the right instinct to verify rather than fabricate, but I stopped it here because on reflection the deeper issue isn't which specific photos to use — it's that hand-picking convincing-looking mock photos risks making placeholder data look more finished and "real" than the product actually is at this stage. A photo-accurate-looking mock is a small, easy-to-miss form of the same problem as the fake urgency counter: something that looks more real than it is.
-- **What I changed and why:** I chose not to pursue photo-matching further and instead documented the placeholder photos as an explicitly-labelled limitation in FOUNDER-RESPONSE.md, tied to the fact that real item photos are an owner-upload feature requiring backend work, not a frontend styling problem. This was my call to make, not something the AI got wrong, but it's the clearest example in this sprint of stepping back from "make the AI's output more convincing" toward "is convincing actually the right goal here."
+- What I changed and why: I chose not to pursue photo-matching further and instead documented the placeholder photos as an explicitly-labelled limitation in FOUNDER-RESPONSE.md, tied to the fact that real item photos are an owner-upload feature requiring backend work, not a frontend styling problem. This was my call to make, not something the AI got wrong, but it's the clearest example in this sprint of stepping back from "make the AI's output more convincing" toward "is convincing actually the right goal here."
 
 

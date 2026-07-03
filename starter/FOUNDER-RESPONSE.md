@@ -16,9 +16,8 @@ I deliberately didn't try to touch messaging, ratings submission, maps, offline 
 
 - Messaging between borrower and owner — you flagged this as a "maybe" yourself, and it's genuinely a separate, real-time system (message threads, notifications, read receipts) that deserves its own sprint, not a bolt-on. Deferred, not forgotten.
 - Offline support and real-time updates — these are infrastructure commitments (service workers, websockets or polling, conflict resolution), not UI features. They change your backend architecture, not just your frontend. Out of scope for a frontend-only sprint.
-- Map view, wishlist, referral codes, dark mode*— each one is individually reasonable, but stacked together they're the "three months of work in one sprint" problem. I'd rank dark mode as the cheapest to add later (mostly a styling pass), and referral codes as needing real backend logic (unique code generation, fraud prevention) before it's worth building at all.
+- Map view, wishlist, referral codes, dark mode— each one is individually reasonable, but stacked together they're the "three months of work in one sprint" problem. I'd rank dark mode as the cheapest to add later (mostly a styling pass), and referral codes as needing real backend logic (unique code generation, fraud prevention) before it's worth building at all.
 - Ratings and reviews submission — the data model already supports ratings (you'll see `rating` and `ratingCount` on every owner), but there's no UI yet to actually submit a review. I prioritised getting someone through a first booking over building a review system for bookings that don't exist yet.
-- Photo-accurate item images*— the mock data currently uses generic placeholder photos that don't visually match each item (a photo of *a* drill-shaped object, not necessarily *your* drill). Real item photos need an actual upload flow with real backend storage, which isn't something frontend mock data can fake convincingly — and I didn't want to spend sprint time making placeholder data look more finished than it actually is, since that risks giving you and investors a false impression of what's built.
 
 ## What I pushed back on 
 
@@ -36,5 +35,4 @@ I deliberately didn't try to touch messaging, ratings submission, maps, offline 
 4. The honest version of the urgency feature — real recent-activity stats once there's real activity to show.
 5. Ratings submission, since the data model's already there waiting for it.
 
-Happy to walk through any of this live 
 

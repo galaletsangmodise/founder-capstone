@@ -1,8 +1,5 @@
 # Decision Log
 
-At least 8 real entries. Generic entries score nothing. Use this shape:
-
-# Decision Log
 
 ## Decision: Gate authentication behind the booking action, not behind browsing
 
