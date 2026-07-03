@@ -1,110 +1,139 @@
-// src/screens/ItemDetailScreen.tsx
-import type { Item } from "../data/types";
-import "./ItemDetailScreen.css";
+/* src/screens/ItemDetailScreen.css */
 
-interface ItemDetailScreenProps {
-  items: Item[];
-  itemId: string;
-  onBack: () => void;
-  onBook: (itemId: string) => void;
+.detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-function formatPrice(item: Item): string {
-  if (item.price === null) return "Free";
-  const amount = (item.price.amountCents / 100).toLocaleString("en-ZA", {
-    style: "currency",
-    currency: "ZAR",
-    minimumFractionDigits: 0,
-  });
-  return `${amount} / ${item.price.period}`;
+.detail__back {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 12px;
 }
 
-function formatRating(owner: Item["owner"]): string {
-  if (owner.rating === null) return "No ratings yet";
-  return `${owner.rating.toFixed(1)} ★ (${owner.ratingCount} review${owner.ratingCount === 1 ? "" : "s"})`;
+.detail__back:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
-function formatDistance(distanceKm: number | null): string | null {
-  if (distanceKm === null) return null;
-  return distanceKm < 1
-    ? `${Math.round(distanceKm * 1000)} m away`
-    : `${distanceKm.toFixed(1)} km away`;
+.detail--missing {
+  text-align: center;
+  padding-top: 48px;
 }
 
-export function ItemDetailScreen({ items, itemId, onBack, onBook }: ItemDetailScreenProps) {
-  const item = items.find((i) => i.id === itemId);
+.detail__gallery {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border-radius: 12px;
+}
 
-  // Defensive: item could theoretically be missing (bad link, stale id).
-  // We don't control how this screen gets reached in the future, so
-  // handle it rather than assume it can't happen.
-  if (!item) {
-    return (
-      <main className="detail detail--missing">
-        <button className="detail__back" onClick={onBack}>
-          ← Back
-        </button>
-        <p>This item couldn't be found. It may have been removed.</p>
-      </main>
-    );
-  }
+.detail__photo {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
 
-  const isBookable = item.status === "available";
-  const distanceLabel = formatDistance(item.distanceKm);
+.detail__photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  background: #eee;
+  color: #777;
+  font-size: 0.95rem;
+}
 
-  return (
-    <main className="detail">
-      <button className="detail__back" onClick={onBack}>
-        ← Back
-      </button>
+.detail__body {
+  padding-top: 20px;
+}
 
-      {item.photoUrls.length > 0 ? (
-        <div className="detail__gallery">
-          {item.photoUrls.map((url, i) => (
-            <img
-              key={url}
-              src={url}
-              alt={`${item.title} photo ${i + 1}`}
-              className="detail__photo"
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="detail__photo detail__photo--placeholder" role="img" aria-label="No photo available">
-          No photo yet
-        </div>
-      )}
+.detail__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
 
-      <div className="detail__body">
-        <div className="detail__heading">
-          <h1 className="detail__title">{item.title}</h1>
-          <span className="detail__price">{formatPrice(item)}</span>
-        </div>
+.detail__title {
+  font-size: 1.5rem;
+  margin: 0;
+}
 
-        {item.status === "paused" && (
-          <p className="detail__notice" role="status">
-            This item is temporarily unavailable — the owner has paused it.
-          </p>
-        )}
+.detail__price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
 
-        {distanceLabel && <p className="detail__distance">{distanceLabel}</p>}
+.detail__notice {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fff4e5;
+  border: 1px solid #f0c36d;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
 
-        <p className="detail__description">{item.description}</p>
+.detail__distance {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
 
-        <section className="detail__owner" aria-label="Owner details">
-          <h2 className="detail__owner-heading">Owner</h2>
-          <p className="detail__owner-name">{item.owner.displayName}</p>
-          <p className="detail__owner-rating">{formatRating(item.owner)}</p>
-        </section>
+.detail__description {
+  margin-top: 16px;
+  line-height: 1.5;
+}
 
-        <button
-          className="detail__book"
-          onClick={() => onBook(item.id)}
-          disabled={!isBookable}
-          aria-disabled={!isBookable}
-        >
-          {isBookable ? "Book now" : "Currently unavailable"}
-        </button>
-      </div>
-    </main>
-  );
+.detail__owner {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.detail__owner-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin: 0 0 6px;
+}
+
+.detail__owner-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.detail__owner-rating {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 2px 0 0;
+}
+
+.detail__book {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.detail__book:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.detail__book:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
