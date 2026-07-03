@@ -1,5 +1,6 @@
 import type { Item } from "../data/types";
 import "./ItemCard.css";
+import { formatPrice, formatDistance } from "../utils/format";
 
 function CategoryIcon({ category }: { category: Item["category"] }) {
   return <span className={`item-card__category-icon item-card__category-icon--${category}`} />;
