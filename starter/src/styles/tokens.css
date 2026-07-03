@@ -1,0 +1,28 @@
+:root {
+  /* colour */
+  --color-graphite: #16181B;
+  --color-steel: #1F2226;
+  --color-border: #2C2F33;
+  --color-ash: #8B9096;
+  --color-paper: #EDEDEE;
+  --color-copper: #B97A4A;
+
+  /* type */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+}
+
+body {
+  background: var(--color-graphite);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  margin: 0;
+}
