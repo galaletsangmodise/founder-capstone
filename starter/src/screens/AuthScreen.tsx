@@ -1,6 +1,13 @@
 // src/screens/AuthScreen.tsx
 import { useState, type FormEvent } from "react";
-import type { AuthUser } from "../data/types";
+
+// Local AuthUser type — the shared types file doesn't export AuthUser in this
+// project, so define the shape here to avoid the import error.
+type AuthUser = {
+  id: string;
+  email: string;
+  displayName: string;
+};
 import "./AuthScreen.css";
 
 interface AuthScreenProps {
