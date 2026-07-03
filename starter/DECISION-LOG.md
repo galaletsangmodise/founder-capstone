@@ -62,7 +62,8 @@ At least 8 real entries. Generic entries score nothing. Use this shape:
 
 ## Decision: Item photos use seeded stock placeholders and are explicitly labelled as such, rather than trying to source photo-accurate images for mock data
 
-- Context: The starter mock data uses Lorem Picsum seeded URLs (e.g. `picsum.photos/seed/drill/600/400`), which return an arbitrary stock photo per seed string — not a real photo of the item described. This was flagged as visually "wrong."
-- Options I considered: (1) Leave the mismatched placeholder photos as-is with no comment, and let it look like a bug. (2) Spend sprint time hand-picking better-matching stock photos per item so they visually resemble the actual item. (3) Replace photos with simple category-based icons/illustration instead of photo-realistic images, so the placeholder nature is honest rather than almost-convincing.
-- What I chose and why: For this sprint, I flagged it explicitly in FOUNDER-RESPONSE.md as a known placeholder-data limitation rather than quietly living with mismatched photos or spending sprint time hunting for near-matches. Real item photos are fundamentally an owner-upload feature requiring backend/storage work that's out of scope for a frontend-only sprint — polishing the placeholder further would be time spent making mock data look more finished than the actual product is, which risks misrepresenting what's built to Thabo and to investors.
-- What I gave up: Screens don't look as immediately polished in the demo as they would with hand-picked matching photos. I judged that an honest, clearly-labelled placeholder is worth more than a good-looking but slightly deceptive one — especially given the brief's own instruction that correct-looking output built on a shortcut is still the wrong call.
+Decision: Ignore photoUrls entirely, always render category icons
+Context: Mock data uses Picsum seeded URLs (e.g. seed/drill); seeds hash to arbitrary stock photos with no relation to the seed word — one rendered as an unrelated, inappropriate image for a "drill" listing.
+Options: (1) Keep photoUrls, manually vet/replace each seed. (2) Ignore photoUrls, always use deterministic category icons.
+Chose: (2) — the data source is fundamentally unreliable (seed ≠ content match), and this also cleanly handles items with empty photoUrls arrays with one code path instead of two.
+Gave up: Visual variety per-item; every "power-tools" item looks the same. Acceptable since real user-uploaded photos will replace this once there's a backend
