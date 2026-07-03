@@ -16,7 +16,7 @@ Type-check anytime with `npm run typecheck` (strict mode, no `any`).
 - `src/App.tsx` — an empty shell. Delete it and build the product.
 
 ## What you deliver (all required — see BRIEF.md for detail)
-1. The working app, **deployed to a live public URL** (link in this README).
+1. The working app, https://thabosmarketplace.vercel.app/
 2. `FOUNDER-RESPONSE.md` — your professional pushback to Thabo.
 3. `DECISION-LOG.md` — min. 8 real decisions with tradeoffs.
 4. `AI-USAGE.md` — min. 3 AI moments, incl. one where AI was wrong and you caught it.
