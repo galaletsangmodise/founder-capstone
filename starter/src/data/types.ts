@@ -62,3 +62,12 @@ export interface BookingDraft {
   /** null until the user has agreed to the owner's terms. */
   agreedToTerms: boolean;
 }
+
+
+
+/** A signed-in user. We don't control the real auth shape yet — kept minimal on purpose. */
+export interface AuthUser {
+  id: string;
+  email: string;
+  displayName: string;
+}
