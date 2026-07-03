@@ -1,7 +1,7 @@
 // src/App.tsx
 import { useState } from "react";
 import { ITEMS } from "./data/items.ts";
-import { BrowseScreen } from "./screens/BrowseScreen.txs";
+import { BrowseScreen } from "./screens/BrowseScreen.tsx/index.ts";
 
 type Screen = { name: "browse" } | { name: "detail"; itemId: string };
 
