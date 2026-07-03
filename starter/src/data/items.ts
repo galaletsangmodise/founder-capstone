@@ -25,9 +25,7 @@ export const ITEMS: Item[] = [
     title: "Extension Ladder (3m)",
     category: "outdoor",
     description: "Aluminium, light, fits in a hatchback.",
-    // Deliberately empty — real data has listings with no photos yet.
-    // UI must fall back gracefully (CategoryIcon), not break or show a broken image icon.
-    photoUrls: [],
+    photoUrls: [ladderImg],
     price: { amountCents: 0, period: "day" },
     owner: { id: "usr_b", displayName: "Sipho", rating: null, ratingCount: 0, joinedISO: "2026-06-18" },
     distanceKm: null,
@@ -39,6 +37,7 @@ export const ITEMS: Item[] = [
     title: "Pressure Washer",
     category: "outdoor",
     description: "Great for driveways and walls. Bring your own hose.",
+    // Deliberately empty — real data has listings with no photos yet.
     photoUrls: [],
     price: { amountCents: 12000, period: "day" },
     owner: { id: "usr_c", displayName: "Fatima", rating: 4.2, ratingCount: 6, joinedISO: "2025-11-02" },
@@ -75,7 +74,8 @@ export const ITEMS: Item[] = [
     title: "Lawn Mower (petrol)",
     category: "garden",
     description: "Self-propelled. A bit loud but cuts fast.",
-    photoUrls: [ladderImg],
+    // Deliberately empty — real data has listings with no photos yet.
+    photoUrls: [],
     price: null,
     owner: { id: "usr_f", displayName: "Anele", rating: 4.5, ratingCount: 18, joinedISO: "2025-07-07" },
     distanceKm: 2.9,
