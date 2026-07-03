@@ -1,8 +1,7 @@
 import drillImg from "../assets/items/drill.jpg";
 import ladderImg from "../assets/items/ladder.jpg";
 import mixerImg from "../assets/items/bakingtool.jpg";
-import tablesImg from "../assets/items/foldingtable.jpg";
-import mowerImg from "../assets/items/landmower.jpg";
+import tablesImg from "../assets/items/foldingtable.webp";
 import tileImg from "../assets/items/tilecutter.jpg";
 import gazeboImg from "../assets/items/gazebo.jpg";
 
@@ -40,7 +39,7 @@ export const ITEMS: Item[] = [
     title: "Pressure Washer",
     category: "outdoor",
     description: "Great for driveways and walls. Bring your own hose.",
-    photoUrls: [washerImg],
+    photoUrls: [],
     price: { amountCents: 12000, period: "day" },
     owner: { id: "usr_c", displayName: "Fatima", rating: 4.2, ratingCount: 6, joinedISO: "2025-11-02" },
     distanceKm: 4.7,
@@ -76,8 +75,7 @@ export const ITEMS: Item[] = [
     title: "Lawn Mower (petrol)",
     category: "garden",
     description: "Self-propelled. A bit loud but cuts fast.",
-    // Deliberately empty — same graceful-fallback case as itm_002.
-    photoUrls: [],
+    photoUrls: [ladderImg],
     price: null,
     owner: { id: "usr_f", displayName: "Anele", rating: 4.5, ratingCount: 18, joinedISO: "2025-07-07" },
     distanceKm: 2.9,
