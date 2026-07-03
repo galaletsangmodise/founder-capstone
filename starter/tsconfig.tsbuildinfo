@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/css.d.ts","./src/main.tsx","./src/components/itemcard.tsx","./src/data/items.ts","./src/data/types.ts","./src/screens/authscreen.tsx","./src/screens/bookingscreen.tsx","./src/screens/browsescreen.tsx","./src/screens/itemdetails.tsx"],"version":"5.9.3"}
