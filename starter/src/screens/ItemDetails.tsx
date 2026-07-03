@@ -31,7 +31,7 @@ function formatDistance(distanceKm: number | null): string | null {
     : `${distanceKm.toFixed(1)} km away`;
 }
 
-export function ItemDetailScreen({ items, itemId, onBack, onBook }: ItemDetailScreenProps) {
+export function ItemDetails({ items, itemId, onBack, onBook }: ItemDetailScreenProps) {
   const item = items.find((i) => i.id === itemId);
 
   // Defensive: item could theoretically be missing (bad link, stale id).

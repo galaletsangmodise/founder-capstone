@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { ITEMS } from "./data/items.ts";
 import { BrowseScreen } from "./screens/BrowseScreen";
-import { ItemDetailScreen } from "./screens/ItemDetails";
+import { ItemDetails } from "./screens/ItemDetails";
+import { BookingScreen } from "./screens/BookingScreen";
 
 type Screen =
   | { name: "browse" }
@@ -23,22 +24,22 @@ export function App() {
 
   if (screen.name === "detail") {
     return (
-      <ItemDetailScreen
+      <ItemDetails
         items={ITEMS}
         itemId={screen.itemId}
         onBack={() => setScreen({ name: "browse" })}
-        onBook={(itemId) => setScreen({ name: "booking", itemId })}
+        onBook={(itemId: string) => setScreen({ name: "booking", itemId })}
       />
     );
   }
 
-  // Booking flow wired up next
+  // screen.name === "booking"
   return (
-    <main style={{ padding: 24 }}>
-      <button onClick={() => setScreen({ name: "detail", itemId: screen.itemId })}>
-        ← Back
-      </button>
-      <p>Booking flow coming next: {screen.itemId}</p>
-    </main>
+    <BookingScreen
+      items={ITEMS}
+      itemId={screen.itemId}
+      onBack={() => setScreen({ name: "detail", itemId: screen.itemId })}
+      onDone={() => setScreen({ name: "browse" })}
+    />
   );
 }
