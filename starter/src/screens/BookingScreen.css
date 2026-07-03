@@ -1,0 +1,160 @@
+/* src/screens/BookingScreen.css */
+
+.booking {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.booking__back {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+.booking__back:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.booking--missing {
+  text-align: center;
+  padding-top: 48px;
+}
+
+.booking__title {
+  font-size: 1.35rem;
+  margin: 0 0 16px;
+}
+
+.booking__steps {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.booking__steps li[aria-current="step"] {
+  color: #111;
+  font-weight: 600;
+}
+
+.booking__error {
+  background: #fdeaea;
+  border: 1px solid #e69a9a;
+  color: #8a2b2b;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.booking__section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.booking__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.booking__field input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.booking__primary {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.booking__secondary {
+  padding: 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.booking__primary:focus-visible,
+.booking__secondary:focus-visible,
+.booking__terms input:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.booking__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.booking__actions .booking__secondary,
+.booking__actions .booking__primary {
+  flex: 1;
+}
+
+.booking__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.booking__summary div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.booking__summary dt {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.booking__summary dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.booking__terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.booking__confirmation {
+  text-align: center;
+  padding: 24px 8px;
+}
+
+.booking__confirmation-icon {
+  font-size: 2rem;
+  margin: 0 0 8px;
+}
+
+.booking__confirmation-note {
+  color: #666;
+  font-size: 0.9rem;
+}
