@@ -1,6 +1,6 @@
 // src/screens/ItemDetailScreen.tsx
 import type { Item } from "../data/types";
-import "./ItemDetailScreen.css";
+import "./ItemDetails.css";
 
 interface ItemDetailScreenProps {
   items: Item[];
